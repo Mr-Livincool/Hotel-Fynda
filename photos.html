@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport View Hotel Photos - Hotel Fynda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .photo-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            height: 300px;
+        }
+        
+        .photo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+        
+        .photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-item:hover .photo-img {
+            transform: scale(1.1);
+        }
+        
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .photo-item:hover .photo-overlay {
+            transform: translateY(0);
+        }
+        
+        .photo-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .photo-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-count {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .back-to-hotel {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .hotel-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-hotel logo-icon"></i>
+                <div class="logo-text">Hotel<span>Fynda</span></div>
+            </a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home nav-icon"></i> Home</a></li>
+                    <li><a href="about.html" class="nav-link"><i class="fas fa-info-circle nav-icon"></i> About</a></li>
+                    <li><a href="service.html" class="nav-link"><i class="fas fa-map nav-icon"></i> Regions</a></li>
+                    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope nav-icon"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hotel Header -->
+    <section class="hotel-header" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1564501049418-3c27787d01e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+        <h1 class="hotel-name-large">Airport View Hotel</h1>
+        <p class="hotel-location-large"><i class="fas fa-camera"></i> Photo Gallery</p>
+    </section>
+
+    <!-- Hotel Tabs -->
+    <div class="container">
+        <div class="hotel-tabs">
+            <a href="apv.html" class="tab-link"><i class="fas fa-eye"></i> Overview</a>
+            <a href="info.html" class="tab-link"><i class="fas fa-info-circle"></i> Information</a>
+            <a href="photos.html" class="tab-link active"><i class="fas fa-images"></i> Photos</a>
+        </div>
+
+        <!-- Gallery Header -->
+        <div class="gallery-header">
+            <h2>Airport View Hotel Gallery</h2>
+            <p class="about-text">Explore our hotel facilities through high-quality photographs</p>
+            <div class="gallery-count">5 Photos Available</div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="photo-gallery">
+            <!-- Photo 1 -->
+            <div class="photo-item">
+                <span class="hotel-tag">Exterior</span>
+                <img src="img/apv/apv.jpg" alt="Airport View Hotel Exterior" class="photo-img">
+                <div class="photo-overlay">
+                    <div class="photo-title">Hotel Exterior</div>
+                    <div class="photo-description">Modern building near Kotoka International Airport</div>
+                </div>
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="photo-item">
+                <span class="hotel-tag">Lobby</span>
+                <img src="img/apv/apv1.jpg" alt="Hotel Lobby" class="photo-img">
+                <div class="photo-overlay">
+                    <div class="photo-title">Reception Area</div>
+                    <div class="photo-description">Elegant lobby with professional staff</div>
+                </div>
+            </div>
+
+            <!-- Photo 3 -->
+            <div class="photo-item">
+                <span class="hotel-tag">Room</span>
+                <img src="img/apv/apv2.jpg" alt="Hotel Room" class="photo-img">
+                <div class="photo-overlay">
+                    <div class="photo-title">Standard Room</div>
+                    <div class="photo-description">Comfortable accommodation with modern amenities</div>
+                </div>
+            </div>
+
+            <!-- Photo 4 -->
+            <div class="photo-item">
+                <span class="hotel-tag">Restaurant</span>
+                <img src="img/apv/apv3.jpg" alt="LUNA Restaurant" class="photo-img">
+                <div class="photo-overlay">
+                    <div class="photo-title">LUNA Restaurant</div>
+                    <div class="photo-description">Fine dining with international cuisine</div>
+                </div>
+            </div>
+
+            <!-- Photo 5 -->
+            <div class="photo-item">
+                <span class="hotel-tag">Pool</span>
+                <img src="img/apv/apv4.jpg" alt="Swimming Pool" class="photo-img">
+                <div class="photo-overlay">
+                    <div class="photo-title">Heated Swimming Pool</div>
+                    <div class="photo-description">Outdoor pool with relaxation area</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hotel Description -->
+        <div class="info-card mt-5">
+            <h2><i class="fas fa-info-circle text-primary"></i> About Our Facilities</h2>
+            <p class="about-text">
+                Airport View Hotel offers a range of modern facilities designed for both business and leisure travelers. 
+                Located less than 1km from Kotoka International Airport, we provide convenience and comfort.
+            </p>
+            
+            <div class="mt-4">
+                <h3><i class="fas fa-star text-secondary"></i> Key Features</h3>
+                <div class="feature-grid mt-3">
+                    <div class="feature-card">
+                        <i class="fas fa-plane feature-icon"></i>
+                        <h4>Airport Proximity</h4>
+                        <p>3 minutes to airport</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-swimming-pool feature-icon"></i>
+                        <h4>Heated Pool</h4>
+                        <p>Year-round swimming</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-utensils feature-icon"></i>
+                        <h4>LUNA Restaurant</h4>
+                        <p>Fine dining experience</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-dumbbell feature-icon"></i>
+                        <h4>Fitness Center</h4>
+                        <p>Modern gym equipment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="back-to-hotel">
+            <a href="apv.html" class="hero-button">
+                <i class="fas fa-arrow-left"></i> Back to Overview
+            </a>
+            
+            <a href="info.html" class="hero-button">
+                <i class="fas fa-info-circle"></i> View Information
+            </a>
+            
+            <a href="contact.html" class="hero-button bg-accent">
+                <i class="fas fa-calendar-alt"></i> Book Your Stay
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">Hotel<span>Fynda</span></div>
+                <p class="footer-description">Your trusted partner in finding luxury accommodations across Ghana.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Regions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Regions</h4>
+                <ul>
+                    <li><a href="accra.html">Greater Accra</a></li>
+                    <li><a href="central.html">Central Region</a></li>
+                    <li><a href="eastern.html">Eastern Region</a></li>
+                    <li><a href="western.html">Western Region</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>HOTEL FYNDA <br> Copyright &copy; 2021 Hotel FYNDA ,Inc. <br> Legal Stuffs | Privacy Policy</p>
+        </div>
+    </footer>
+
+    <style>
+        .bg-accent {
+            background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%) !important;
+        }
+    </style>
+</body>
+</html>
